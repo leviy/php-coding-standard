@@ -1,0 +1,23 @@
+{
+  "name": "leviy/coding-standard",
+  "description": "LEVIY Coding Standard",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "LEVIY B.V. (Netherlands)",
+      "email": "info@leviy.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "": "src"
+    }
+  },
+  "require": {
+    "php": ">=5.6",
+    "squizlabs/php_codesniffer": "^2.9",
+    "escapestudios/symfony2-coding-standard": "~2.0",
+    "fig-r/psr2r-sniffer": "^0.4"
+  },
+  "minimum-stability": "stable"
+}

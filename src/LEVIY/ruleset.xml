@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<ruleset name="LEVIY">
+    <description>LEVIY Coding Standard</description>
+
+    <arg name="report-width" value="auto"/>
+
+    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony2/ruleset.xml">
+        <exclude name="Symfony2.Commenting.FunctionComment.SpacingAfterParamType"/>
+        <exclude name="Symfony2.NamingConventions.ValidClassName.InvalidAbstractName"/>
+        <exclude name="Symfony2.WhiteSpace.DiscourageFitzinator"/>
+        <exclude name="PSR2.Methods.FunctionCallSignature.ContentAfterOpenBracket"/>
+    </rule>
+
+    <!--<rule ref="vendor/fig-r/psr2r-sniffer/PSR2R/Sniffs/ControlStructures/ConditionalExpressionOrderSniff.php"/>
+    <rule ref="PSR2R.ControlStructures.ConditionalExpressionOrder">
+        <type>warning</type>
+        <severity>1</severity>
+    </rule>-->
+
+    <rule ref="Generic.Arrays.DisallowLongArraySyntax.Found">
+        <severity>1</severity>
+    </rule>
+    <rule ref="Generic.CodeAnalysis.EmptyStatement"/>
+    <rule ref="Generic.CodeAnalysis.ForLoopWithTestFunctionCall"/>
+    <rule ref="Generic.CodeAnalysis.JumbledIncrementer"/>
+    <rule ref="Generic.CodeAnalysis.UnconditionalIfStatement"/>
+    <rule ref="Generic.CodeAnalysis.UselessOverridingMethod"/>
+    <rule ref="Generic.Metrics.CyclomaticComplexity">
+        <properties>
+            <property name="complexity" value="6"/>
+            <property name="absoluteComplexity" value="8"/>
+        </properties>
+    </rule>
+    <rule ref="Generic.Metrics.NestingLevel">
+        <properties>
+            <property name="nestingLevel" value="4"/>
+            <property name="absoluteNestingLevel" value="6"/>
+        </properties>
+    </rule>
+    <rule ref="Generic.PHP.Syntax"/>
+    <rule ref="Generic.PHP.DeprecatedFunctions"/>
+
+    <rule ref="Squiz.PHP.DiscouragedFunctions"/>
+    <rule ref="Squiz.PHP.Eval"/>
+    <rule ref="Squiz.PHP.NonExecutableCode"/>
+    <rule ref="Squiz.Strings.ConcatenationSpacing">
+        <properties>
+            <property name="spacing" value="1"/>
+        </properties>
+    </rule>
+</ruleset>
