@@ -6,7 +6,7 @@ Update `composer.json`:
 
     {
         "repositories": [
-            { "type": "vcs", "url": "git@bitbucket.org:dcoorn/leviy-coding-standard.git" }
+            { "type": "vcs", "url": "git@bitbucket.org:leviy/leviy-coding-standard.git" }
         ],
         
         "require-dev": {
