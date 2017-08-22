@@ -3,7 +3,7 @@
 namespace LEVIY\Sniffs\Classes;
 
 /**
- * FinalDeclarationSniff
+ * AbstractFinalDeclarationSniff
  *
  * @author Dennis Coorn <dcoorn@leviy.com>
  * @copyright Copyright (c) 2017 LEVIY <https://leviy.com>
@@ -11,54 +11,13 @@ namespace LEVIY\Sniffs\Classes;
  *
  * @see https://ocramius.github.io/blog/when-to-declare-classes-final/
  */
-class FinalDeclarationSniff implements \PHP_CodeSniffer_Sniff
+abstract class AbstractFinalDeclarationSniff
 {
-    /**
-     * @return array
-     */
-    public function register()
-    {
-        return [T_FINAL];
-    }
-
-    /**
-     * @param \PHP_CodeSniffer_File $phpcsFile
-     * @param int $stackPtr
-     * @return void
-     */
-    public function process(\PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $className = $this->getClassName($phpcsFile);
-        $reflectionClass = new \ReflectionClass($className);
-
-        $methodNames = $this->getMethodNames($reflectionClass);
-        $interfaceMethodNames = $this->getInterfaceMethodNames($reflectionClass);
-
-        $methodNamesDiff = array_diff($methodNames, $interfaceMethodNames);
-
-        if (count($methodNamesDiff) === 0) {
-            return;
-        }
-
-        $error = 'Only make classes final if they implement an interface and no other public methods are defined';
-        $fix = $phpcsFile->addFixableError($error, $stackPtr, 'RemoveFinal');
-
-        if ($fix === true) {
-            $phpcsFile->fixer->beginChangeset();
-
-            $classPosition = $phpcsFile->findNext(T_CLASS, $stackPtr);
-            for ($x = $stackPtr; $x < $classPosition; $x++) {
-                $phpcsFile->fixer->replaceToken($x, '');
-            }
-
-            $phpcsFile->fixer->endChangeset();
-        }
-    }
     /**
      * @param \PHP_CodeSniffer_File $phpCsFile
      * @return string
      */
-    private function getClassName(\PHP_CodeSniffer_File $phpCsFile)
+    protected function getClassName(\PHP_CodeSniffer_File $phpCsFile)
     {
         $fileName = $phpCsFile->getFilename();
 
@@ -76,7 +35,7 @@ class FinalDeclarationSniff implements \PHP_CodeSniffer_Sniff
      * @param \ReflectionClass $reflectionClass
      * @return string[]
      */
-    private function getMethodNames(\ReflectionClass $reflectionClass)
+    protected function getMethodNames(\ReflectionClass $reflectionClass)
     {
         $methods = $reflectionClass->getMethods(\ReflectionMethod::IS_PUBLIC);
 
@@ -91,7 +50,7 @@ class FinalDeclarationSniff implements \PHP_CodeSniffer_Sniff
      * @param \ReflectionClass $reflectionClass
      * @return string[]
      */
-    private function getInterfaceMethodNames(\ReflectionClass $reflectionClass)
+    protected function getInterfaceMethodNames(\ReflectionClass $reflectionClass)
     {
         $interfaceMethodNames = [];
 
@@ -109,7 +68,7 @@ class FinalDeclarationSniff implements \PHP_CodeSniffer_Sniff
      * @param \ReflectionMethod $reflectionMethod
      * @return bool
      */
-    private function filterMethod(\ReflectionMethod $reflectionMethod)
+    protected function filterMethod(\ReflectionMethod $reflectionMethod)
     {
         $name = $reflectionMethod->getName();
 
