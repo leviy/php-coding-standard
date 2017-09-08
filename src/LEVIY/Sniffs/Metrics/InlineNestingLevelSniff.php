@@ -2,13 +2,6 @@
 
 namespace LEVIY\Sniffs\Metrics;
 
-/**
- * InlineNestingLevelSniff
- *
- * @author Dennis Coorn <dcoorn@leviy.com>
- * @copyright Copyright (c) 2017 LEVIY <https://leviy.com>
- * @package LEVIY\Sniffs\Metrics
- */
 class InlineNestingLevelSniff implements \PHP_CodeSniffer_Sniff
 {
     /** @var int */

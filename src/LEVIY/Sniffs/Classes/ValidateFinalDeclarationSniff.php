@@ -3,12 +3,6 @@
 namespace LEVIY\Sniffs\Classes;
 
 /**
- * ValidateFinalDeclarationSniff
- *
- * @author Dennis Coorn <dcoorn@leviy.com>
- * @copyright Copyright (c) 2017 LEVIY <https://leviy.com>
- * @package LEVIY\Sniffs\Classes
- *
  * @see https://ocramius.github.io/blog/when-to-declare-classes-final/
  */
 class ValidateFinalDeclarationSniff extends AbstractFinalDeclarationSniff implements \PHP_CodeSniffer_Sniff
@@ -40,8 +34,8 @@ class ValidateFinalDeclarationSniff extends AbstractFinalDeclarationSniff implem
             return;
         }
 
-        $error = 'Only declare classes final if they implement an interface and no other public methods are defined';
-        $fix = $phpcsFile->addFixableError($error, $stackPtr, 'RemoveFinal');
+        $warning = 'Only declare classes final if they implement an interface and no other public methods are defined';
+        $fix = $phpcsFile->addFixableWarning($warning, $stackPtr, 'RemoveFinal');
 
         if ($fix === true) {
             $phpcsFile->fixer->beginChangeset();

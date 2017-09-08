@@ -2,13 +2,6 @@
 
 namespace LEVIY\Sniffs\WhiteSpace;
 
-/**
- * OpeningTagSniff
- *
- * @author Dennis Coorn <dcoorn@leviy.com>
- * @copyright Copyright (c) 2017 LEVIY <https://leviy.com>
- * @package LEVIY\Sniffs\WhiteSpace
- */
 class OpeningTagSniff implements \PHP_CodeSniffer_Sniff
 {
     /**

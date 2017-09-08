@@ -3,12 +3,6 @@
 namespace LEVIY\Sniffs\Classes;
 
 /**
- * AbstractFinalDeclarationSniff
- *
- * @author Dennis Coorn <dcoorn@leviy.com>
- * @copyright Copyright (c) 2017 LEVIY <https://leviy.com>
- * @package LEVIY\Sniffs\Classes
- *
  * @see https://ocramius.github.io/blog/when-to-declare-classes-final/
  */
 abstract class AbstractFinalDeclarationSniff

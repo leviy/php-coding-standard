@@ -3,12 +3,6 @@
 namespace LEVIY\Sniffs\Classes;
 
 /**
- * EncourageCompositionOverInheritanceSniff
- *
- * @author Dennis Coorn <dcoorn@leviy.com>
- * @copyright Copyright (c) 2017 LEVIY <https://leviy.com>
- * @package LEVIY\Sniffs\Classes
- *
  * @see https://ocramius.github.io/blog/when-to-declare-classes-final/
  */
 class EncourageCompositionOverInheritanceSniff extends AbstractFinalDeclarationSniff implements \PHP_CodeSniffer_Sniff
@@ -44,8 +38,8 @@ class EncourageCompositionOverInheritanceSniff extends AbstractFinalDeclarationS
             return;
         }
 
-        $error = 'Declare classes final when they implement an interface and no other public methods are defined';
-        $fix = $phpcsFile->addFixableError($error, $stackPtr, 'DeclareFinal');
+        $warning = 'Declare classes final when they implement an interface and no other public methods are defined';
+        $fix = $phpcsFile->addFixableWarning($warning, $stackPtr, 'DeclareFinal');
 
         if ($fix === true) {
             $phpcsFile->fixer->beginChangeset();

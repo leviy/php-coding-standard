@@ -2,13 +2,6 @@
 
 namespace LEVIY\Sniffs\WhiteSpace;
 
-/**
- * DiscourageFitzinatorSniff
- *
- * @author Dennis Coorn <dcoorn@leviy.com>
- * @copyright Copyright (c) 2017 LEVIY <https://leviy.com>
- * @package LEVIY\Sniffs\WhiteSpace
- */
 class DiscourageFitzinatorSniff implements \PHP_CodeSniffer_Sniff
 {
     /**
@@ -35,8 +28,8 @@ class DiscourageFitzinatorSniff implements \PHP_CodeSniffer_Sniff
         }
 
         if (strpos($tokens[$stackPtr]['content'], "\n") > 0 || strpos($tokens[$stackPtr]['content'], "\r") > 0) {
-            $warning = 'Please trim any trailing whitespace';
-            $fix = $phpcsFile->addFixableWarning($warning, $stackPtr, 'TrailingWhiteSpace');
+            $error = 'Please trim any trailing whitespace';
+            $fix = $phpcsFile->addFixableError($error, $stackPtr, 'TrimTrailingWhiteSpace');
 
             if ($fix === true) {
                 $phpcsFile->fixer->beginChangeset();

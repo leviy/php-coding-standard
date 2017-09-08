@@ -2,90 +2,72 @@
 
 namespace LEVIY\Sniffs\Commenting;
 
-if (class_exists('PHP_CodeSniffer_Tokenizers_Comment', true) === false) {
-    $error = 'Class PHP_CodeSniffer_Tokenizers_Comment not found';
-    throw new \PHP_CodeSniffer_Exception($error);
-}
-
-if (class_exists('PEAR_Sniffs_Commenting_ClassCommentSniff', true) === false) {
-    $error = 'Class PEAR_Sniffs_Commenting_ClassCommentSniff not found';
-    throw new \PHP_CodeSniffer_Exception($error);
-}
-
-/**
- * ClassCommentSniff
- *
- * @author Dennis Coorn <dcoorn@leviy.com>
- * @copyright Copyright (c) 2017 LEVIY <https://leviy.com>
- * @package LEVIY\Sniffs\Commenting
- */
-class ClassCommentSniff extends \Symfony2_Sniffs_Commenting_ClassCommentSniff
+class ClassCommentSniff implements \PHP_CodeSniffer_Sniff
 {
-    /** @var array */
-    protected $tags = [
-        '@author' => [
-            'required' => true,
-            'allow_multiple' => true,
-            'order_text' => 'precedes @copyright',
-        ],
-        '@copyright' => [
-            'required' => true,
-            'allow_multiple' => true,
-            'order_text' => 'follows @author',
-        ],
-        '@package' => [
-            'required' => true,
-            'allow_multiple' => false,
-            'order_text' => 'follows @copyright',
-        ],
-        '@deprecated' => [
-            'required' => false,
-            'allow_multiple' => false,
-            'order_text' => 'follows @package',
-        ],
-    ];
+    const SNIFF_COMMENT_TAG_NAMES = ['@author', '@copyright', '@package'];
 
     /**
-     * @param \PHP_CodeSniffer_File $phpcsFile
-     * @param int $stackPtr
-     * @param int $commentStart
-     * @return void
+     * @return array
      */
-    protected function processTags(\PHP_CodeSniffer_File $phpcsFile, $stackPtr, $commentStart)
+    public function register()
     {
-        $tokens = $phpcsFile->getTokens();
-
-        $next = $phpcsFile->findNext(T_DOC_COMMENT_STRING, $commentStart);
-
-        $className = $phpcsFile->getDeclarationName($stackPtr);
-
-        if ($tokens[$next]['content'] !== $className) {
-            $error = 'First line of class docblock must contain the ClassName';
-            $phpcsFile->addError($error, $next, 'MissingClassName');
-        }
-
-        parent::processTags($phpcsFile, $stackPtr, $commentStart);
+        return [
+            T_CLASS,
+            T_INTERFACE,
+            T_TRAIT,
+        ];
     }
 
     /**
      * @param \PHP_CodeSniffer_File $phpcsFile
-     * @param array $tags
+     * @param int $stackPtr
      * @return void
      */
-    protected function processCopyright(\PHP_CodeSniffer_File $phpcsFile, array $tags)
+    public function process(\PHP_CodeSniffer_File $phpcsFile, $stackPtr)
     {
         $tokens = $phpcsFile->getTokens();
-        foreach ($tags as $tag) {
-            if ($tokens[($tag + 2)]['code'] !== T_DOC_COMMENT_STRING) {
-                continue;
+
+        $commentStart = $phpcsFile->findPrevious(T_DOC_COMMENT_OPEN_TAG, $stackPtr);
+        if ($commentStart === false) {
+            return;
+        }
+
+        $commentTagNames = $this->resolveCommentTagNames($tokens, $commentStart);
+        $intersect = array_intersect(self::SNIFF_COMMENT_TAG_NAMES, $commentTagNames);
+
+        if (count($intersect) === 0) {
+            return;
+        }
+
+        $error = "We don't do class comments anymore";
+        $fix = $phpcsFile->addFixableError($error, $stackPtr, 'RemoveClassComment');
+
+        if ($fix === true) {
+            $commentEnd = $tokens[$commentStart]['comment_closer'];
+
+            $phpcsFile->fixer->beginChangeset();
+
+            for ($i = $commentStart; $i <= $commentEnd; $i++) {
+                $phpcsFile->fixer->replaceToken($i, '');
             }
 
-            $content = $tokens[($tag + 2)]['content'];
-            $matches = array();
-            if (!preg_match('/^(.*)?([0-9]{4})((.{1})([0-9]{4}))? (.+)$/', $content, $matches)) {
-                $error = '@copyright tag must contain a year and the name of the copyright holder';
-                $phpcsFile->addError($error, $tag, 'IncompleteCopyright');
-            }
+            $phpcsFile->fixer->endChangeset();
         }
+    }
+
+    /**
+     * @param array $tokens
+     * @param $commentStart
+     * @return string[]
+     */
+    private function resolveCommentTagNames(array $tokens, $commentStart)
+    {
+        $commentTagPositions = $tokens[$commentStart]['comment_tags'];
+
+        return array_reduce($commentTagPositions, function ($commentTagNames, $commentTagPosition) use ($tokens) {
+            $commentTagNames[] = $tokens[$commentTagPosition]['content'];
+
+            return $commentTagNames;
+        }, []);
     }
 }
