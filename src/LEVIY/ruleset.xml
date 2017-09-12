@@ -4,32 +4,20 @@
 
     <arg name="report-width" value="auto"/>
 
-    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony2/ruleset.xml">
-        <exclude name="Symfony2.Commenting.ClassComment.Missing"/>
-        <exclude name="Symfony2.Commenting.FunctionComment.SpacingAfterParamName"/>
-        <exclude name="Symfony2.NamingConventions.ValidClassName.InvalidAbstractName"/>
-        <exclude name="Symfony2.NamingConventions.ValidClassName.InvalidInterfaceName"/>
-        <exclude name="Symfony2.NamingConventions.ValidClassName.InvalidTraitName"/>
-        <exclude name="Symfony2.NamingConventions.ValidClassName.InvalidExceptionName"/>
-        <exclude name="Symfony2.WhiteSpace.DiscourageFitzinator"/>
-        <exclude name="PEAR.Functions.FunctionCallSignature.Indent"/>
+    <rule ref="PSR1"/>
+    <rule ref="PSR2">
         <exclude name="PSR2.Methods.FunctionCallSignature.ContentAfterOpenBracket"/>
     </rule>
 
-    <rule ref="vendor/fig-r/psr2r-sniffer/PSR2R/Sniffs/ControlStructures/ConditionalExpressionOrderSniff.php"/>
-    <rule ref="PSR2R.ControlStructures.ConditionalExpressionOrder">
-        <type>warning</type>
-        <severity>1</severity>
-    </rule>
-
-    <rule ref="Generic.Arrays.DisallowLongArraySyntax.Found">
-        <severity>1</severity>
-    </rule>
+    <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
     <rule ref="Generic.CodeAnalysis.EmptyStatement"/>
     <rule ref="Generic.CodeAnalysis.ForLoopWithTestFunctionCall"/>
     <rule ref="Generic.CodeAnalysis.JumbledIncrementer"/>
     <rule ref="Generic.CodeAnalysis.UnconditionalIfStatement"/>
     <rule ref="Generic.CodeAnalysis.UselessOverridingMethod"/>
+    <rule ref="Generic.ControlStructures.InlineControlStructure"/>
+    <rule ref="Generic.Formatting.SpaceAfterCast"/>
+    <rule ref="Generic.Functions.CallTimePassByReference"/>
     <rule ref="Generic.Metrics.CyclomaticComplexity">
         <properties>
             <property name="complexity" value="6"/>
@@ -42,15 +30,70 @@
             <property name="absoluteNestingLevel" value="6"/>
         </properties>
     </rule>
+    <rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
+    <rule ref="Generic.PHP.LowerCaseConstant"/>
     <rule ref="Generic.PHP.Syntax"/>
     <rule ref="Generic.PHP.DeprecatedFunctions"/>
 
+    <rule ref="Generic.CodeAnalysis.EmptyStatement.DetectedCATCH">
+        <type>warning</type>
+    </rule>
+
+    <rule ref="PEAR.Commenting.InlineComment"/>
+
+    <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
+    <rule ref="Squiz.ControlStructures.ControlSignature"/>
+    <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration"/>
+    <rule ref="Squiz.ControlStructures.ForLoopDeclaration"/>
+    <rule ref="Squiz.ControlStructures.LowercaseDeclaration"/>
+    <rule ref="Squiz.PHP.LowercasePHPFunctions"/>
     <rule ref="Squiz.PHP.DiscouragedFunctions"/>
     <rule ref="Squiz.PHP.Eval"/>
     <rule ref="Squiz.PHP.NonExecutableCode"/>
+    <rule ref="Squiz.Scope.MemberVarScope"/>
     <rule ref="Squiz.Strings.ConcatenationSpacing">
         <properties>
             <property name="spacing" value="1"/>
         </properties>
+    </rule>
+
+    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony2/Sniffs/Arrays/MultiLineArrayCommaSniff.php"/>
+    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony2/Sniffs/Classes/MultipleClassesOneFileSniff.php"/>
+    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony2/Sniffs/Classes/PropertyDeclarationSniff.php"/>
+    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony2/Sniffs/Commenting/ClassCommentSniff.php">
+        <exclude name="Symfony2.Commenting.ClassComment.Missing"/>
+        <exclude name="Symfony2.Commenting.ClassComment.SpacingBeforeTags"/>
+    </rule>
+    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony2/Sniffs/Commenting/FunctionCommentSniff.php">
+        <exclude name="Symfony2.Commenting.FunctionComment.MissingParamComment"/>
+        <exclude name="Symfony2.Commenting.FunctionComment.SpacingAfterParamName"/>
+    </rule>
+    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony2/Sniffs/Formatting/BlankLineBeforeReturnSniff.php"/>
+    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony2/Sniffs/Functions/ScopeOrderSniff.php"/>
+    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony2/Sniffs/NamingConventions/ValidClassNameSniff.php">
+        <exclude name="Symfony2.NamingConventions.ValidClassName.InvalidAbstractName"/>
+        <exclude name="Symfony2.NamingConventions.ValidClassName.InvalidInterfaceName"/>
+        <exclude name="Symfony2.NamingConventions.ValidClassName.InvalidTraitName"/>
+        <exclude name="Symfony2.NamingConventions.ValidClassName.InvalidExceptionName"/>
+    </rule>
+    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony2/Sniffs/Objects/ObjectInstantiationSniff.php"/>
+    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony2/Sniffs/Scope/MethodScopeSniff.php"/>
+    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony2/Sniffs/WhiteSpace/AssignmentSpacingSniff.php"/>
+    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony2/Sniffs/WhiteSpace/BinaryOperatorSpacingSniff.php"/>
+    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony2/Sniffs/WhiteSpace/CommaSpacingSniff.php"/>
+
+    <rule ref="Symfony2.Commenting.FunctionComment.Missing">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Symfony2.Commenting.FunctionComment.MissingParamTag">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Symfony2.Commenting.FunctionComment.MissingReturn">
+        <severity>0</severity>
+    </rule>
+
+    <rule ref="vendor/fig-r/psr2r-sniffer/PSR2R/Sniffs/ControlStructures/ConditionalExpressionOrderSniff.php">
+        <!-- The autofixer of this sniff isn't always fixing correctly, therefor it's disabled during 'fix'-mode -->
+        <severity phpcbf-only="true">0</severity>
     </rule>
 </ruleset>
