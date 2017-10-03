@@ -2,7 +2,10 @@
 
 namespace LEVIY\Sniffs\Commenting;
 
-class ClassCommentSniff implements \PHP_CodeSniffer_Sniff
+use PHP_CodeSniffer\Files\File;
+use PHP_CodeSniffer\Sniffs\Sniff;
+
+class ClassCommentSniff implements Sniff
 {
     const SNIFF_COMMENT_TAG_NAMES = ['@author', '@copyright', '@package'];
 
@@ -19,11 +22,11 @@ class ClassCommentSniff implements \PHP_CodeSniffer_Sniff
     }
 
     /**
-     * @param \PHP_CodeSniffer_File $phpcsFile
+     * @param File $phpcsFile
      * @param int $stackPtr
      * @return void
      */
-    public function process(\PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    public function process(File $phpcsFile, $stackPtr)
     {
         $tokens = $phpcsFile->getTokens();
 

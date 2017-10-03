@@ -2,7 +2,10 @@
 
 namespace LEVIY\Sniffs\Metrics;
 
-class InlineNestingLevelSniff implements \PHP_CodeSniffer_Sniff
+use PHP_CodeSniffer\Files\File;
+use PHP_CodeSniffer\Sniffs\Sniff;
+
+class InlineNestingLevelSniff implements Sniff
 {
     /** @var int */
     public $nestingLevel = 2;
@@ -18,11 +21,11 @@ class InlineNestingLevelSniff implements \PHP_CodeSniffer_Sniff
     }
 
     /**
-     * @param \PHP_CodeSniffer_File $phpcsFile
+     * @param File $phpcsFile
      * @param int $stackPtr
      * @return void
      */
-    public function process(\PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    public function process(File $phpcsFile, $stackPtr)
     {
         $tokens = $phpcsFile->getTokens();
 
@@ -55,12 +58,12 @@ class InlineNestingLevelSniff implements \PHP_CodeSniffer_Sniff
     }
 
     /**
-     * @param \PHP_CodeSniffer_File $phpcsFile
+     * @param File $phpcsFile
      * @param int $start
      * @param int $end
      * @return int
      */
-    private function countNestingLevel(\PHP_CodeSniffer_File $phpcsFile, $start, $end)
+    private function countNestingLevel(File $phpcsFile, $start, $end)
     {
         $tokens = $phpcsFile->getTokens();
 
