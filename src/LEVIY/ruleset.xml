@@ -57,43 +57,38 @@
         </properties>
     </rule>
 
-    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony2/Sniffs/Arrays/MultiLineArrayCommaSniff.php"/>
-    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony2/Sniffs/Classes/MultipleClassesOneFileSniff.php"/>
-    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony2/Sniffs/Classes/PropertyDeclarationSniff.php"/>
-    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony2/Sniffs/Commenting/ClassCommentSniff.php">
-        <exclude name="Symfony2.Commenting.ClassComment.Missing"/>
-        <exclude name="Symfony2.Commenting.ClassComment.SpacingBeforeTags"/>
+    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony/Sniffs/Arrays/MultiLineArrayCommaSniff.php"/>
+    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony/Sniffs/Classes/MultipleClassesOneFileSniff.php"/>
+    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony/Sniffs/Classes/PropertyDeclarationSniff.php"/>
+    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony/Sniffs/Commenting/ClassCommentSniff.php">
+        <exclude name="Symfony.Commenting.ClassComment.Missing"/>
+        <exclude name="Symfony.Commenting.ClassComment.SpacingBeforeTags"/>
     </rule>
-    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony2/Sniffs/Commenting/FunctionCommentSniff.php">
-        <exclude name="Symfony2.Commenting.FunctionComment.MissingParamComment"/>
-        <exclude name="Symfony2.Commenting.FunctionComment.SpacingAfterParamName"/>
+    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony/Sniffs/Commenting/FunctionCommentSniff.php">
+        <exclude name="Symfony.Commenting.FunctionComment.MissingParamComment"/>
+        <exclude name="Symfony.Commenting.FunctionComment.SpacingAfterParamName"/>
     </rule>
-    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony2/Sniffs/Formatting/BlankLineBeforeReturnSniff.php"/>
-    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony2/Sniffs/Functions/ScopeOrderSniff.php"/>
-    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony2/Sniffs/NamingConventions/ValidClassNameSniff.php">
-        <exclude name="Symfony2.NamingConventions.ValidClassName.InvalidAbstractName"/>
-        <exclude name="Symfony2.NamingConventions.ValidClassName.InvalidInterfaceName"/>
-        <exclude name="Symfony2.NamingConventions.ValidClassName.InvalidTraitName"/>
-        <exclude name="Symfony2.NamingConventions.ValidClassName.InvalidExceptionName"/>
+    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony/Sniffs/Formatting/BlankLineBeforeReturnSniff.php"/>
+    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony/Sniffs/Functions/ScopeOrderSniff.php"/>
+    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony/Sniffs/NamingConventions/ValidClassNameSniff.php">
+        <exclude name="Symfony.NamingConventions.ValidClassName.InvalidAbstractName"/>
+        <exclude name="Symfony.NamingConventions.ValidClassName.InvalidInterfaceName"/>
+        <exclude name="Symfony.NamingConventions.ValidClassName.InvalidTraitName"/>
+        <exclude name="Symfony.NamingConventions.ValidClassName.InvalidExceptionName"/>
     </rule>
-    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony2/Sniffs/Objects/ObjectInstantiationSniff.php"/>
-    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony2/Sniffs/Scope/MethodScopeSniff.php"/>
-    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony2/Sniffs/WhiteSpace/AssignmentSpacingSniff.php"/>
-    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony2/Sniffs/WhiteSpace/BinaryOperatorSpacingSniff.php"/>
-    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony2/Sniffs/WhiteSpace/CommaSpacingSniff.php"/>
+    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony/Sniffs/Objects/ObjectInstantiationSniff.php"/>
+    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony/Sniffs/Scope/MethodScopeSniff.php"/>
+    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony/Sniffs/WhiteSpace/AssignmentSpacingSniff.php"/>
+    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony/Sniffs/WhiteSpace/BinaryOperatorSpacingSniff.php"/>
+    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony/Sniffs/WhiteSpace/CommaSpacingSniff.php"/>
 
-    <rule ref="Symfony2.Commenting.FunctionComment.Missing">
+    <rule ref="Symfony.Commenting.FunctionComment.Missing">
         <severity>0</severity>
     </rule>
-    <rule ref="Symfony2.Commenting.FunctionComment.MissingParamTag">
+    <rule ref="Symfony.Commenting.FunctionComment.MissingParamTag">
         <severity>0</severity>
     </rule>
-    <rule ref="Symfony2.Commenting.FunctionComment.MissingReturn">
+    <rule ref="Symfony.Commenting.FunctionComment.MissingReturn">
         <severity>0</severity>
-    </rule>
-
-    <rule ref="vendor/fig-r/psr2r-sniffer/PSR2R/Sniffs/ControlStructures/ConditionalExpressionOrderSniff.php">
-        <!-- The autofixer of this sniff isn't always fixing correctly, therefor it's disabled during 'fix'-mode -->
-        <severity phpcbf-only="true">0</severity>
     </rule>
 </ruleset>
