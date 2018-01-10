@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "fc52ede967784a5d0d77c92f2637d9a0",
+    "content-hash": "162428eb19574734ebdc0298308cc1c7",
     "packages": [
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
@@ -120,6 +120,43 @@
                 "symfony"
             ],
             "time": "2017-07-20T08:51:22+00:00"
+        },
+        {
+            "name": "slevomat/coding-standard",
+            "version": "4.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/slevomat/coding-standard.git",
+                "reference": "52f3c79c5fc0d575a8a763c54a16c96e7a7e41b0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/52f3c79c5fc0d575a8a763c54a16c96e7a7e41b0",
+                "reference": "52f3c79c5fc0d575a8a763c54a16c96e7a7e41b0",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1",
+                "squizlabs/php_codesniffer": "^3.0.2"
+            },
+            "require-dev": {
+                "jakub-onderka/php-parallel-lint": "0.9.2",
+                "phing/phing": "2.16",
+                "phpstan/phpstan": "0.9.1",
+                "phpunit/phpunit": "6.5.5"
+            },
+            "type": "phpcodesniffer-standard",
+            "autoload": {
+                "psr-4": {
+                    "SlevomatCodingStandard\\": "SlevomatCodingStandard"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Slevomat Coding Standard for PHP_CodeSniffer complements Consistence Coding Standard by providing sniffs with additional checks.",
+            "time": "2018-01-08T08:07:32+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
