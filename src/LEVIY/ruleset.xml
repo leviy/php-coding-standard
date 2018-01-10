@@ -60,7 +60,7 @@
     <rule ref="SlevomatCodingStandard.TypeHints.LongTypeHints"/>
 
     <!-- Enforce strict comparisons (=== instead of ==) -->
-    <rule ref="SlevomatCodingStandard.ControlStructures.DisallowEqualOperators" />
+    <rule ref="SlevomatCodingStandard.ControlStructures.DisallowEqualOperators"/>
 
     <!-- Disallow Yoda conditions -->
     <rule ref="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison"/>
