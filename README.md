@@ -30,7 +30,7 @@ Create a `phpcs.xml` file containing the following bootstrap code sniffer config
         
         <exclude-pattern>*Test.php</exclude-pattern>
         
-        <rule ref="vendor/leviy/coding-standard/src/LEVIY/ruleset.xml"/>
+        <rule ref="LEVIY"/>
     </ruleset>
 
 An annotated `ruleset.xml` configuration file can be found [here](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-ruleset.xml) 
