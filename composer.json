@@ -1,5 +1,6 @@
 {
   "name": "leviy/coding-standard",
+  "type": "phpcodesniffer-standard",
   "description": "LEVIY Coding Standard",
   "license": "proprietary",
   "authors": [
