@@ -1,5 +1,6 @@
 {
   "name": "leviy/coding-standard",
+  "type": "phpcodesniffer-standard",
   "description": "LEVIY Coding Standard",
   "license": "proprietary",
   "authors": [
@@ -15,8 +16,12 @@
   },
   "require": {
     "php": ">=5.6",
-    "squizlabs/php_codesniffer": "^3.0",
-    "escapestudios/symfony2-coding-standard": "^3.0"
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
+    "escapestudios/symfony2-coding-standard": "^3.0",
+    "squizlabs/php_codesniffer": "^3.0"
   },
-  "minimum-stability": "stable"
+  "minimum-stability": "stable",
+  "config": {
+    "sort-packages": true
+  }
 }
