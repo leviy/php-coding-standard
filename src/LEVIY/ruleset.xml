@@ -59,6 +59,9 @@
     docblocks -->
     <rule ref="SlevomatCodingStandard.TypeHints.LongTypeHints"/>
 
+    <!-- Enforce trailing commas in multi-line arrays -->
+    <rule ref="SlevomatCodingStandard.Arrays.TrailingArrayComma"/>
+
     <!-- Enforce strict comparisons (=== instead of ==) -->
     <rule ref="SlevomatCodingStandard.ControlStructures.DisallowEqualOperators"/>
 
@@ -127,7 +130,6 @@
         </properties>
     </rule>
 
-    <rule ref="Symfony.Arrays.MultiLineArrayComma"/>
     <rule ref="Symfony.Classes.MultipleClassesOneFile"/>
     <rule ref="Symfony.Classes.PropertyDeclaration"/>
     <rule ref="Symfony.Commenting.ClassComment">
