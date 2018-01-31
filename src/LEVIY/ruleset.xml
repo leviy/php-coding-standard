@@ -127,6 +127,9 @@
     <rule ref="Squiz.PHP.DiscouragedFunctions"/>
     <rule ref="Squiz.PHP.Eval"/>
     <rule ref="Squiz.PHP.NonExecutableCode"/>
+    <rule ref="Squiz.PHP.CommentedOutCode">
+        <type>error</type>
+    </rule>
     <rule ref="Squiz.Scope.MemberVarScope"/>
     <rule ref="Squiz.Strings.ConcatenationSpacing">
         <properties>
