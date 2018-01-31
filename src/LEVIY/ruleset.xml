@@ -126,7 +126,9 @@
     <rule ref="Squiz.PHP.LowercasePHPFunctions"/>
     <rule ref="Squiz.PHP.DiscouragedFunctions"/>
     <rule ref="Squiz.PHP.Eval"/>
-    <rule ref="Squiz.PHP.NonExecutableCode"/>
+    <rule ref="Squiz.PHP.NonExecutableCode">
+        <type>error</type>
+    </rule>
     <rule ref="Squiz.PHP.CommentedOutCode">
         <type>error</type>
     </rule>
