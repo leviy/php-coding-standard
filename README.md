@@ -2,21 +2,11 @@
 
 ## Installation
 
-Update `composer.json`:
+Install the coding standard using [Composer](https://getcomposer.org/):
 
-    {
-        "repositories": [
-            { "type": "vcs", "url": "git@bitbucket.org:leviy/leviy-coding-standard.git" }
-        ],
-        
-        "require-dev": {
-            "leviy/coding-standard": "^1.0"
-        }
-    }
-
-Install dependencies:
-
-    composer update leviy/coding-standard
+```bash
+composer require --dev leviy/coding-standard
+```
 
 Create a `phpcs.xml` file containing the following bootstrap code sniffer configuration:  
 
