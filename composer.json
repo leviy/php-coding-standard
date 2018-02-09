@@ -9,17 +9,20 @@
       "email": "info@leviy.com"
     }
   ],
-  "autoload": {
-    "psr-4": {
-      "": "src"
-    }
-  },
   "require": {
     "php": "^7.1",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
     "escapestudios/symfony2-coding-standard": "^3.0",
     "slevomat/coding-standard": "^4.3",
     "squizlabs/php_codesniffer": "^3.0"
+  },
+  "require-dev": {
+    "liip/rmt": "^1.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "": "src"
+    }
   },
   "minimum-stability": "stable",
   "config": {
