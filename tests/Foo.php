@@ -5,7 +5,7 @@ namespace Bar;
 
 use DateTime;
 
-final class Foo
+class Foo
 {
     private const NOW = 'now';
 

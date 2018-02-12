@@ -1,0 +1,16 @@
+
+FILE: tests/Bar.php
+----------------------------------------------------------------------------------------------------------------------
+FOUND 6 ERRORS AFFECTING 5 LINES
+----------------------------------------------------------------------------------------------------------------------
+  3 | ERROR | [x] Expected 1 newlines between PHP open tag and declare statement, found 2.
+  3 | ERROR | [x] Expected strict_types=1, found strict_types = 1.
+  7 | ERROR | [x] Use statement cannot start with a backslash.
+ 11 | ERROR | [ ] Constant \Bar\Bar::NOW visibility missing.
+ 13 | ERROR | [x] There must be no whitespace between closing parenthesis and return type colon.
+ 15 | ERROR | [x] Function strtolower() should not be referenced via a fallback global name, but via a use statement.
+----------------------------------------------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 5 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+----------------------------------------------------------------------------------------------------------------------
+
+
