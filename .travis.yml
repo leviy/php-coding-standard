@@ -1,0 +1,13 @@
+language: php
+
+php:
+  - 7.1
+  - 7.2
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+install: composer install
+
+script: vendor/bin/phpcs --standard=src/LEVIY/ruleset.xml --basepath=. --report-file=phpcs.log --report-width=120 tests/; diff tests/expected.log phpcs.log
