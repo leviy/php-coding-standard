@@ -16,18 +16,20 @@ composer require --dev leviy/coding-standard
 
 Create a `phpcs.xml` file containing the following bootstrap code sniffer configuration:  
 
-    <?xml version="1.0"?>
-    <ruleset name="LEVIY">
-        <description>LEVIY</description>
-            
-        <arg name="extensions" value="php" />
-        
-        <file>./src</file>
-        
-        <exclude-pattern>*Test.php</exclude-pattern>
-        
-        <rule ref="LEVIY"/>
-    </ruleset>
+```xml
+<?xml version="1.0"?>
+<ruleset name="LEVIY">
+    <description>LEVIY</description>
+
+    <arg name="extensions" value="php" />
+
+    <file>./src</file>
+
+    <exclude-pattern>*Test.php</exclude-pattern>
+
+    <rule ref="LEVIY"/>
+</ruleset>
+```
 
 An annotated `ruleset.xml` configuration file can be found [here](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-ruleset.xml) 
 where you can see the complete range of features and configuration options that can be used to modify the configuration to your project needs.
