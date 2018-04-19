@@ -1,5 +1,11 @@
 # LEVIY Coding Standard
 
+[![Build status](https://img.shields.io/travis/leviy/php-coding-standard.svg)](https://travis-ci.org/leviy/php-coding-standard)
+[![Packagist version](https://img.shields.io/packagist/v/leviy/coding-standard.svg)](https://packagist.org/packages/leviy/coding-standard)
+![PHP from Packagist](https://img.shields.io/packagist/php-v/leviy/coding-standard.svg)
+
+The LEVIY coding standard for PHP code, including a PHPCS ruleset.
+
 ## Installation
 
 Install the coding standard using [Composer](https://getcomposer.org/):
