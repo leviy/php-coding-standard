@@ -1,5 +1,11 @@
 # LEVIY Coding Standard
 
+[![Build status](https://img.shields.io/travis/leviy/php-coding-standard.svg)](https://travis-ci.org/leviy/php-coding-standard)
+[![Packagist version](https://img.shields.io/packagist/v/leviy/coding-standard.svg)](https://packagist.org/packages/leviy/coding-standard)
+[![PHP from Packagist](https://img.shields.io/packagist/php-v/leviy/coding-standard.svg)](https://github.com/leviy/php-coding-standard/blob/master/composer.json)
+
+The LEVIY coding standard for PHP code, including a PHPCS ruleset.
+
 ## Installation
 
 Install the coding standard using [Composer](https://getcomposer.org/):
@@ -10,18 +16,20 @@ composer require --dev leviy/coding-standard
 
 Create a `phpcs.xml` file containing the following bootstrap code sniffer configuration:  
 
-    <?xml version="1.0"?>
-    <ruleset name="LEVIY">
-        <description>LEVIY</description>
-            
-        <arg name="extensions" value="php" />
-        
-        <file>./src</file>
-        
-        <exclude-pattern>*Test.php</exclude-pattern>
-        
-        <rule ref="LEVIY"/>
-    </ruleset>
+```xml
+<?xml version="1.0"?>
+<ruleset name="LEVIY">
+    <description>LEVIY</description>
+
+    <arg name="extensions" value="php" />
+
+    <file>./src</file>
+
+    <exclude-pattern>*Test.php</exclude-pattern>
+
+    <rule ref="LEVIY"/>
+</ruleset>
+```
 
 An annotated `ruleset.xml` configuration file can be found [here](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-ruleset.xml) 
 where you can see the complete range of features and configuration options that can be used to modify the configuration to your project needs.
