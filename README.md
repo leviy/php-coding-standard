@@ -21,17 +21,15 @@ composer require --dev leviy/coding-standard
 Create a file `phpcs.xml` in the root of the project with the following contents:
 
 ```xml
-<?xml version="1.0"?>
-<ruleset name="LEVIY">
-    <description>LEVIY</description>
-
-    <arg name="extensions" value="php" />
-
-    <file>./src</file>
-
-    <exclude-pattern>*Test.php</exclude-pattern>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset>
     <rule ref="LEVIY"/>
+
+    <config name="ignore_warnings_on_exit" value="1"/>
+
+    <file>src/</file>
+    <file>tests/</file>
+    <file>public/index.php</file>
 </ruleset>
 ```
 
