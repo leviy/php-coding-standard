@@ -1,31 +1,32 @@
 {
-  "name": "leviy/coding-standard",
-  "type": "phpcodesniffer-standard",
-  "description": "LEVIY Coding Standard",
-  "license": "proprietary",
-  "authors": [
-    {
-      "name": "LEVIY B.V. (Netherlands)",
-      "email": "info@leviy.com"
+    "name": "leviy/coding-standard",
+    "type": "phpcodesniffer-standard",
+    "description": "LEVIY Coding Standard",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "LEVIY B.V. (Netherlands)",
+            "email": "info@leviy.com"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
+        "escapestudios/symfony2-coding-standard": "^3.0",
+        "phpmd/phpmd": "^2.6",
+        "slevomat/coding-standard": "^4.3",
+        "squizlabs/php_codesniffer": "^3.0"
+    },
+    "require-dev": {
+        "liip/rmt": "^1.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "src"
+        }
+    },
+    "minimum-stability": "stable",
+    "config": {
+        "sort-packages": true
     }
-  ],
-  "require": {
-    "php": "^7.1",
-    "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
-    "escapestudios/symfony2-coding-standard": "^3.0",
-    "slevomat/coding-standard": "^4.3",
-    "squizlabs/php_codesniffer": "^3.0"
-  },
-  "require-dev": {
-    "liip/rmt": "^1.3"
-  },
-  "autoload": {
-    "psr-4": {
-      "": "src"
-    }
-  },
-  "minimum-stability": "stable",
-  "config": {
-    "sort-packages": true
-  }
 }
