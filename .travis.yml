@@ -12,8 +12,4 @@ cache:
   directories:
     - $HOME/.composer/cache
 
-install: composer install
-
-script:
-  - vendor/bin/phpmd src/ text phpmd.xml
-  - vendor/bin/phpcs --standard=src/LEVIY/ruleset.xml --basepath=. --report-file=phpcs.log --report-width=120 tests/; diff tests/expected.log phpcs.log
+script: make check
