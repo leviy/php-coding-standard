@@ -27,6 +27,8 @@ Create a file `phpcs.xml` in the root of the project with the following contents
 
     <config name="ignore_warnings_on_exit" value="1"/>
 
+    <arg name="extensions" value="php"/>
+
     <file>src/</file>
     <file>tests/</file>
     <file>public/index.php</file>
