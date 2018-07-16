@@ -36,6 +36,12 @@
         </properties>
     </rule>
 
+    <rule ref="rulesets/naming.xml/ShortMethodName">
+        <properties>
+            <property name="exceptions" value="up"/>
+        </properties>
+    </rule>
+
     <rule ref="rulesets/unusedcode.xml">
         <!-- PHPMD cannot recognize parameters that are enforced by an interface -->
         <exclude name="UnusedFormalParameter"/>
