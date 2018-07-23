@@ -186,4 +186,6 @@
     <rule ref="Symfony.Commenting.FunctionComment.MissingReturn">
         <severity>0</severity>
     </rule>
+
+    <config name="installed_paths" value="vendor/slevomat/coding-standard/SlevomatCodingStandard,vendor/escapestudios/symfony2-coding-standard/Symfony" />
 </ruleset>
