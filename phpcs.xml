@@ -3,4 +3,6 @@
     <arg name="basepath" value="."/>
 
     <rule ref="LEVIY"/>
+
+    <config name="installed_paths" value="src/LEVIY"/>
 </ruleset>
