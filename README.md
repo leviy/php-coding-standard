@@ -1,3 +1,5 @@
+<img src="docs/leviy-logo.png" alt="LEVIY logo" align="right" />
+
 # LEVIY Coding Standard
 
 [![Build status](https://img.shields.io/travis/leviy/php-coding-standard.svg)](https://travis-ci.org/leviy/php-coding-standard)
@@ -85,8 +87,8 @@ Run `vendor/bin/phpmd src/ text phpmd.xml` to run PHP Mess Detector against the
 
 4. Select the path to the projects code sniffer configuration.
 
-![](resources/preferences-dialog.png)
+![](docs/preferences-dialog.png)
 
 **Enjoy the immediate feedback of code sniffer validation issues!**
 
-![](resources/code-sniffer-validation-hint.png)
+![](docs/code-sniffer-validation-hint.png)
