@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "826bfb25e09be97193003354c77f5f68",
+    "content-hash": "d2c8c8dc65f4cf93bcb88436d1afd384",
     "packages": [
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
