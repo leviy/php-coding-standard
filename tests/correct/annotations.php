@@ -2,8 +2,8 @@
 declare(strict_types=1);
 
 /**
- * @dataProvider
+ * @whatever
  */
-function dataProviderAnnotationsAreAllowed(): void
+function allUsefulAnnotationsAreAllowed(): void
 {
 }
