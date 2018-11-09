@@ -29,6 +29,28 @@ function uselessParamAnnotation(string $string, array $numbers): array
 {
 }
 
+/**
+ * This is a useful comment that should be kept
+ *
+ * @param string $string
+ *
+ * @return void
+ */
+function uselessAnnotationsWithUsefulComment(string $string): void
+{
+}
+
+/**
+ * @whatever
+ *
+ * @param string $string
+ *
+ * @return void
+ */
+function uselessAnnotationsWithUsefulAnnotation(string $string): void
+{
+}
+
 function wrongNullabilitySymbolSpacing(? string $input): string
 {
 }
