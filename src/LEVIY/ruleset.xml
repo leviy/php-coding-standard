@@ -162,6 +162,7 @@
     </rule>
     <rule ref="Symfony.Commenting.FunctionComment">
         <exclude name="Symfony.Commenting.FunctionComment.MissingParamComment"/>
+        <exclude name="Symfony.Commenting.FunctionComment.ParamNameNoMatch"/>
         <exclude name="Symfony.Commenting.FunctionComment.SpacingAfterParamName"/>
     </rule>
     <rule ref="Symfony.Formatting.BlankLineBeforeReturn"/>
