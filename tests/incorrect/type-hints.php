@@ -10,6 +10,25 @@ function doesNotNeedDocumentationComment(string $input): string
 {
 }
 
+/**
+ * @param int[] $numbers
+ *
+ * @return void
+ */
+function uselessReturnAnnotation(array $numbers): void
+{
+}
+
+/**
+ * @param string $string
+ * @param int[]  $numbers
+ *
+ * @return int[]
+ */
+function uselessParamAnnotation(string $string, array $numbers): array
+{
+}
+
 function wrongNullabilitySymbolSpacing(? string $input): string
 {
 }
@@ -34,8 +53,8 @@ function nullableDefaultValue(string $input = null): void
 /**
  * @param integer[] $input
  *
- * @return boolean
+ * @return boolean[]
  */
-function longDocBlockTypeHints(array $input): bool
+function longDocBlockTypeHints(array $input): array
 {
 }
