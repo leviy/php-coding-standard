@@ -67,6 +67,7 @@
     <rule ref="SlevomatCodingStandard.TypeHints.TypeHintDeclaration">
         <properties>
             <property name="allAnnotationsAreUseful" value="true"/>
+            <property name="enableEachParameterAndReturnInspection" value="true"/>
         </properties>
     </rule>
 
@@ -162,6 +163,7 @@
     </rule>
     <rule ref="Symfony.Commenting.FunctionComment">
         <exclude name="Symfony.Commenting.FunctionComment.MissingParamComment"/>
+        <exclude name="Symfony.Commenting.FunctionComment.ParamNameNoMatch"/>
         <exclude name="Symfony.Commenting.FunctionComment.SpacingAfterParamName"/>
     </rule>
     <rule ref="Symfony.Formatting.BlankLineBeforeReturn"/>
