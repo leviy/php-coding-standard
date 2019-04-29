@@ -82,7 +82,7 @@
     <rule ref="SlevomatCodingStandard.Arrays.TrailingArrayComma"/>
 
     <!-- Enforce strict comparisons (=== instead of ==) -->
-    <rule ref="SlevomatCodingStandard.ControlStructures.DisallowEqualOperators"/>
+    <rule ref="SlevomatCodingStandard.Operators.DisallowEqualOperators"/>
 
     <!-- Disallow Yoda conditions -->
     <rule ref="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison"/>
@@ -176,9 +176,9 @@
     </rule>
     <rule ref="Symfony.Objects.ObjectInstantiation"/>
     <rule ref="Symfony.Scope.MethodScope"/>
-    <rule ref="Symfony.WhiteSpace.AssignmentSpacing"/>
-    <rule ref="Symfony.WhiteSpace.BinaryOperatorSpacing"/>
-    <rule ref="Symfony.WhiteSpace.CommaSpacing"/>
+    <rule ref="Symfony.Whitespace.AssignmentSpacing"/>
+    <rule ref="Symfony.Whitespace.BinaryOperatorSpacing"/>
+    <rule ref="Symfony.Whitespace.CommaSpacing"/>
 
     <rule ref="Symfony.Commenting.FunctionComment.Missing">
         <severity>0</severity>
