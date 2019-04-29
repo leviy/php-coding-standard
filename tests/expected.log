@@ -11,7 +11,7 @@ FILE: tests/incorrect/strict-types-missing.php
 ----------------------------------------------------------------------
 FOUND 1 ERROR AFFECTING 1 LINE
 ----------------------------------------------------------------------
- 1 | ERROR | [x] Missing declare(strict_types = 1).
+ 1 | ERROR | [x] Missing declare(strict_types=1).
 ----------------------------------------------------------------------
 PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
 ----------------------------------------------------------------------
