@@ -175,7 +175,7 @@
         <exclude name="Symfony.NamingConventions.ValidClassName.InvalidExceptionName"/>
     </rule>
     <rule ref="Symfony.Objects.ObjectInstantiation"/>
-    <rule ref="Symfony.Scope.MethodScope"/>
+    <rule ref="Squiz.Scope.MethodScope"/>
     <rule ref="Symfony.Whitespace.AssignmentSpacing"/>
     <rule ref="Symfony.Whitespace.BinaryOperatorSpacing"/>
     <rule ref="Symfony.Whitespace.CommaSpacing"/>
