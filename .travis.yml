@@ -8,6 +8,12 @@ php:
   - 7.1
   - 7.2
 
+matrix:
+  include:
+    - name: Test with the lowest allowed versions of dependencies
+      php: '7.1'
+      install: composer update --prefer-lowest
+
 cache:
   directories:
     - $HOME/.composer/cache
