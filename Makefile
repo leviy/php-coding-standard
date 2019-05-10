@@ -1,7 +1,10 @@
 REPORT = full
 
-vendor: composer.json
+vendor: composer.lock
 	composer install
+
+composer.lock: composer.json
+	composer update
 
 .PHONY: check
 check: vendor
