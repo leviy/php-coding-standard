@@ -10,8 +10,8 @@
         }
     ],
     "require": {
-        "php": "^7.1",
-        "dealerdirect/phpcodesniffer-composer-installer": "^0.6.2",
+        "php": "^7.2",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
         "escapestudios/symfony2-coding-standard": "^3.6",
         "phpmd/phpmd": "^2.6",
         "slevomat/coding-standard": "^6.0",
