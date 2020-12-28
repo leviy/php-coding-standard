@@ -65,7 +65,12 @@
     <!-- Use PHP native type hints whenever possible. Use docblocks only when
     the use of native type hints is impossible. -->
     <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint"/>
-    <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint"/>
+    <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint">
+        <properties>
+            <!-- Native property type hints are disabled because we're not on PHP 7.4 -->
+            <property name="enableNativeTypeHint" value="false"/>
+        </properties>
+    </rule>
     <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint"/>
 
     <!-- Ensure that arguments with a default type of null are marked nullable -->
