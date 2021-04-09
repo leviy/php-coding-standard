@@ -33,7 +33,8 @@
     declare(strict_types=1) (with an optional semi-colon terminator). -->
     <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
         <properties>
-            <property name="newlinesCountBetweenOpenTagAndDeclare" value="1"/>
+            <property name="linesCountBeforeDeclare" value="0"/>
+            <property name="linesCountAfterDeclare" value="1"/>
             <property name="spacesCountAroundEqualsSign" value="0"/>
         </properties>
     </rule>

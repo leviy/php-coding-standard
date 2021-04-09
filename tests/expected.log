@@ -18,14 +18,14 @@ PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
 
 
 FILE: tests/incorrect/strict-types.php
-------------------------------------------------------------------------------------------
+----------------------------------------------------------------------
 FOUND 2 ERRORS AFFECTING 1 LINE
-------------------------------------------------------------------------------------------
- 1 | ERROR | [x] Expected 1 newlines between PHP open tag and declare statement, found 0.
+----------------------------------------------------------------------
+ 1 | ERROR | [x] Expected 0 lines before declare statement, found 0.
  1 | ERROR | [x] Expected strict_types=1, found strict_types = 1.
-------------------------------------------------------------------------------------------
+----------------------------------------------------------------------
 PHPCBF CAN FIX THE 2 MARKED SNIFF VIOLATIONS AUTOMATICALLY
-------------------------------------------------------------------------------------------
+----------------------------------------------------------------------
 
 
 FILE: tests/incorrect/type-hints.php
