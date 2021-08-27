@@ -81,7 +81,7 @@ Run `vendor/bin/phpmd src/ text phpmd.xml` to run PHP Mess Detector against the
 
 1. Open "Preferences" and navigate to "Editor > Inspections".
 
-2. Enable "PHP > PHP Code Sniffer validation".
+2. Enable "PHP > Quality tools > PHP_Code Sniffer validation".
 
 3. Select a "Custom" coding standard.
 
