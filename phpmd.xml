@@ -29,6 +29,13 @@
         <exclude name="ShortVariable"/>
         <exclude name="LongVariable"/>
         <exclude name="ShortMethodName"/>
+        <exclude name="LongClassName"/>
+    </rule>
+
+    <rule ref="rulesets/naming.xml/LongClassName">
+        <properties>
+            <property name="maximum" value="50"/>
+        </properties>
     </rule>
 
     <rule ref="rulesets/unusedcode.xml">
