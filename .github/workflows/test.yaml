@@ -2,26 +2,6 @@ name: Test
 on: push
 
 jobs:
-  test-php7_2:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        prefer: ["prefer-stable", "prefer-lowest"]
-    steps:
-      - name: checkout
-        uses: actions/checkout@v4
-
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '7.2'
-          tools: composer:v2
-
-      - name: Composer Install
-        run: composer update --${{ matrix.prefer }} --no-interaction --no-progress --no-ansi
-
-      - name: Run tests
-        run: make check
   test-php8:
     runs-on: ubuntu-latest
     strategy:
