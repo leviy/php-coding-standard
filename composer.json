@@ -17,6 +17,9 @@
         "slevomat/coding-standard": "^7.0.9 || ^8.16.1",
         "squizlabs/php_codesniffer": "^3.4"
     },
+    "conflict": {
+        "symfony/dependency-injection": "<3.4"
+    },
     "autoload": {
         "psr-4": {
             "": "src"
